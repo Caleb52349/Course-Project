@@ -5,6 +5,10 @@ exports.signupValidator=[
     check('email').isEmail().normalizeEmail().withMessage('Invalid Email'),
     check('password').isLength({min:4}).withMessage('Password must be atleast 4 characters long')
 ];
+exports.signinValidator=[
+    check('email').isEmail().normalizeEmail().withMessage('Invalid Email'),
+    check('password').isLength({min:4}).withMessage('Password must be atleast 4 characters long')
+];
 
 exports.validatorResult=(req,res,next)=>{
     const result = validationResult(req);

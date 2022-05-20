@@ -32,3 +32,28 @@ exports.signupController = async(req,res) =>{
         })
     }
 }
+
+exports.signinController = async(req,res) =>{
+    const {email,password} = req.body
+    try{
+        const user = await User.findOne({email});
+        if(!user){
+            return res.status(400).json({
+                errorMessage:'Invalid credentials'
+            });
+        }
+
+        const isMatch = await bcrypt.compare(password,user.email)
+        if(!isMatch){
+            return res.status(400).json({
+                errorMessage:'invalid Credentials'
+            })
+        }
+    }
+    catch(err){
+        console.log('signInController error: ', err);
+        res.status(500).json({
+            errorMessage:'Server error',
+        })
+    }
+}
