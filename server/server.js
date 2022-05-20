@@ -5,6 +5,7 @@ const morgan = require("morgan")
 const app = express();
 require ('dotenv').config();
 const authRoutes =require('./routes/auth')
+const connectDB = require('./database/db')
 
 //middlewares
 app.use(express.json())
@@ -16,7 +17,7 @@ app.get('/',(req,res)=>{
     res.send("Inside Server")
 })
 //database 
-mongoose.connect(process.env.MONGO_URI,)
+connectDB()
 
 
 const port = process.env.PORT || 5000;
