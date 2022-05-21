@@ -1,4 +1,9 @@
-module.exports={
-    mongoURI:process.env.MONGO_URI,
-    secretKey:process.env.SECRET_KEY
+const e = require('express');
+
+const LIVE = false;
+
+if(LIVE){
+    module.exports = require('./prod.js')
+}else{
+    module.exports = require('./dev.js')
 }
