@@ -8,7 +8,8 @@ import HomePage from './components/HomePage/Homepage';
 import Book from './components/Items/book';
 import UserDashboard from './pages/User/userDashboard'
 import AdminDashboard from './pages/Admin/adminDashboard'
-import { isAuthenticated } from './helpers/auth';
+import AdminRoute from './components/AdminRoute';
+import UserRoute from './components/AdminRoute';
 function App() {
   return (
    <div>
@@ -19,8 +20,8 @@ function App() {
       <Route path="/Register" exact element = {<SignUp/>}/>
       <Route path="/Login" exact element = {<SignIn/>}/>
       <Route path="/dashboard" exact element = {<Dashboard/>}/>
-      <Route path="/user/dashboard" exact element = {<UserDashboard/>}/>
-      <Route path="/admin/dashboard"  exact element = {<AdminDashboard/>}/>
+      <Route path="/admin/dashboard" exact element = {<AdminRoute><UserDashboard/></AdminRoute>}/>
+      <Route path="/user/dashboard"  exact element = {<UserRoute><UserDashboard/></UserRoute>}/>
     </Routes>
    </div>
   );
