@@ -4,7 +4,7 @@ import { isAuthenticated } from "../helpers/auth";
 
 const UserRoute = ({children}) =>{
     return(
-        isAuthenticated() && isAuthenticated().role===0?children:<Navigate to='/Login'/>    
+        isAuthenticated() && isAuthenticated().role === 0 ?children:<Navigate to='/Login'/>    
     );
 };
 

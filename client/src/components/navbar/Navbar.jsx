@@ -38,7 +38,6 @@ if(!isAuthenticated()){
         <Nav.Link as={Link} to ='/'>Home</Nav.Link>
         <Nav.Link as={Link} to='/Login'>Login</Nav.Link>
         <Nav.Link as={Link} to='/Register'>Register</Nav.Link>
-        <Nav.Link disabled>Logout</Nav.Link>
       </Nav>
       <Form className="d-flex">
         <FormControl

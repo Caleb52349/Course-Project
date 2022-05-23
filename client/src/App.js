@@ -9,7 +9,7 @@ import Book from './components/Items/book';
 import UserDashboard from './pages/User/userDashboard'
 import AdminDashboard from './pages/Admin/adminDashboard'
 import AdminRoute from './components/AdminRoute';
-import UserRoute from './components/AdminRoute';
+import UserRoute from './components/UserRoute';
 function App() {
   return (
    <div>
@@ -20,7 +20,7 @@ function App() {
       <Route path="/Register" exact element = {<SignUp/>}/>
       <Route path="/Login" exact element = {<SignIn/>}/>
       <Route path="/dashboard" exact element = {<Dashboard/>}/>
-      <Route path="/admin/dashboard" exact element = {<AdminRoute><UserDashboard/></AdminRoute>}/>
+      <Route path="/admin/dashboard" exact element = {<AdminRoute><AdminDashboard/></AdminRoute>}/>
       <Route path="/user/dashboard"  exact element = {<UserRoute><UserDashboard/></UserRoute>}/>
     </Routes>
    </div>

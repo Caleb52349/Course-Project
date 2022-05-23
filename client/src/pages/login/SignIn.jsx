@@ -65,11 +65,16 @@ const navigate = useNavigate();
           }
           else{
             console.log('Redirect to User dashboard');
-            navigate('/user/dashboard')
+            navigate('/user/dashboard');
           }
         })
         .catch(err =>{
           console.log('Sigin api Function error :', err);
+          setFormData({
+            ...formData,
+            loading:false,
+            errMsg:err.response.data.errorMessage,
+          })
         })
     
     }
