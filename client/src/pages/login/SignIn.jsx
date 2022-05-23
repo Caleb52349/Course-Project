@@ -1,10 +1,11 @@
 import * as React from 'react';
-import {Link} from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
 import {useState} from 'react';
 import { showErrorMsg, showLoading} from '../../helpers/message';
 import isEmail from 'validator/lib/isEmail'
 import isEmpty from 'validator/lib/isEmpty'
 import { signin } from '../../api/auth';
+import { setAuthenticate ,isAuthenticated } from '../../helpers/auth';
 
 
 
@@ -18,7 +19,6 @@ export default function SignIn() {
     password:'',
     errMsg:false,
     loading:false,
-    redirectToDashboard:false,
   })
 
   const {
@@ -26,10 +26,9 @@ export default function SignIn() {
     password,
     errMsg,
     loading,
-    redirectToDashboard,
   } = formData;
 
-
+const navigate = useNavigate();
     
   //event handlers
   const handleChange=(e)=>{
@@ -58,6 +57,20 @@ export default function SignIn() {
       setFormData({...formData,loading:true})
 
       signin(data)
+        .then(res =>{
+          setAuthenticate(res.data.token,res.data.user)
+          if(isAuthenticated() && isAuthenticated().role === 1){
+            console.log('Redirect to Admin Dashboard')
+            navigate('/admin/dashboard');
+          }
+          else{
+            console.log('Redirect to User dashboard');
+            navigate('/user/dashboard')
+          }
+        })
+        .catch(err =>{
+          console.log('Sigin api Function error :', err);
+        })
     
     }
 
