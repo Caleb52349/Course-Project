@@ -9,7 +9,7 @@ import "./styles.css";
 
 
 
-const AddCollection=()=>{
+const AdminAddCollection=()=>{
 
     const [tags,setTags]=useState(null);
     const [topic,setTopics]=useState(null);
@@ -220,4 +220,4 @@ onChange={handleCollectionImage}
 }
 
 
-export default AddCollection
+export default AdminAddCollection

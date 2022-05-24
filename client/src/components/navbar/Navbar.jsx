@@ -63,7 +63,7 @@ if(user.role ===0){
     <div>
       <Navbar bg="light" expand="lg">
 <Container fluid>
-  <Navbar.Brand as={Link} to='/'>Course</Navbar.Brand>
+  <Navbar.Brand >Course</Navbar.Brand>
   <Navbar.Toggle aria-controls="navbarScroll" />
   <Navbar.Collapse id="navbarScroll">
     <Nav
@@ -108,6 +108,8 @@ if(user.role ===1){
     >
 
       <Nav.Link as={Link} to ='/admin/dashboard'>Home</Nav.Link>
+      <Nav.Link as={Link} to ='/admin/items'>Items</Nav.Link>
+      <Nav.Link as={Link} to ='/admin/profile'>Profile</Nav.Link>
       <Nav.Link as ={Link} to ='/Login'onClick={handleLogout}>Logout</Nav.Link>
     </Nav>
     <Form className="d-flex">

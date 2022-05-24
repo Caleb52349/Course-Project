@@ -7,7 +7,7 @@
     
     
     
-    const AddTopics =() =>{
+    const AdminAddTopics =() =>{
     
     const [topic,setTopic]=useState('');
     const [errMsg,setErrMsg] = useState('')
@@ -85,4 +85,4 @@
     }
 
 
-export default AddTopics;
+export default AdminAddTopics;

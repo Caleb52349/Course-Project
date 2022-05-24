@@ -27,7 +27,7 @@ const UserDashboard = ()=>{
         <section class="jumbotron text-center">
           <div class="container">
             <h1 class="jumbotron-heading">Collection Management</h1>
-            <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+            <p class="lead text-muted">Collection Management to Store your favourite Items</p>
             <p>
             <Link to ='/user/addCollection'> <button class="btn btn-primary" type="submit">Add Collection</button></Link>
             <Link to ='/user/addTopics'> <button class="btn btn-primary" type="submit">Add Topics</button></Link>
@@ -49,7 +49,9 @@ const UserDashboard = ()=>{
                   <h6>{col.collectionTag}</h6>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
+                      <Link to='/user/items'>
                       <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      </Link>
                       <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                     </div>
                   

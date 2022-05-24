@@ -15,6 +15,11 @@ import Items from  './pages/User/item'
 import AddCollection from  './pages/User/Form/addCollection'
 import AddTopics from  './pages/User/Form/addTopics';
 
+import AdminAddTopics from  './pages/Admin/Form/addTopics';
+import AdminProfile from  './pages/Admin/profile'
+import AdminItems from  './pages/Admin/item'
+import AdminAddCollection from  './pages/Admin/Form/addCollection'
+
 function App() {
   return (
    <div>
@@ -25,7 +30,13 @@ function App() {
       <Route path="/Register" exact element = {<SignUp/>}/>
       <Route path="/Login" exact element = {<SignIn/>}/>
       <Route path="/dashboard" exact element = {<Dashboard/>}/>
+ 
       <Route path="/admin/dashboard" exact element = {<AdminRoute><AdminDashboard/></AdminRoute>}/>
+      <Route path="/admin/items"  exact element = {<AdminRoute><AdminItems/></AdminRoute>}/>
+      <Route path="/admin/profile"  exact element = {<AdminRoute><AdminProfile/></AdminRoute>}/>
+      <Route path="/admin/addCollection"  exact element = {<AdminRoute><AdminAddCollection/></AdminRoute>}/>
+      <Route path="/admin/addTopics"  exact element = {<AdminRoute><AdminAddTopics/></AdminRoute>}/>      
+      
       <Route path="/user/dashboard"  exact element = {<UserRoute><UserDashboard/></UserRoute>}/>
       <Route path="/user/items"  exact element = {<UserRoute><Items/></UserRoute>}/>
       <Route path="/user/profile"  exact element = {<UserRoute><Profile/></UserRoute>}/>
