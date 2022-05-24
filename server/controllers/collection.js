@@ -35,3 +35,19 @@ exports.create = async (req, res) => {
 		});
 	}
 };
+
+exports.readAll = async (req, res) => {
+	try {
+		const collections = await Collection.find({}).populate(
+			'collectionTopic',
+			'topic'
+		);
+
+		res.json({ collections });
+	} catch (err) {
+		console.log(err, 'productController.readAll error');
+		res.status(500).json({
+			errorMessage: 'Please try again later',
+		});
+	}
+};

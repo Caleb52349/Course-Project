@@ -7,4 +7,6 @@ const collectionController = require('../controllers/collection')
 
 router.post('/',upload.single('collectionImage'),collectionController.create)
 
+router.get('/', collectionController.readAll);
+
 module.exports = router
