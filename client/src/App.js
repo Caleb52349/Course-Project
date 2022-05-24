@@ -10,6 +10,11 @@ import UserDashboard from './pages/User/userDashboard'
 import AdminDashboard from './pages/Admin/adminDashboard'
 import AdminRoute from './components/AdminRoute';
 import UserRoute from './components/UserRoute';
+import Profile from  './pages/User/profile'
+import Items from  './pages/User/item'
+import AddCollection from  './pages/User/Form/addCollection'
+import AddTopics from  './pages/User/Form/addTopics';
+
 function App() {
   return (
    <div>
@@ -22,6 +27,11 @@ function App() {
       <Route path="/dashboard" exact element = {<Dashboard/>}/>
       <Route path="/admin/dashboard" exact element = {<AdminRoute><AdminDashboard/></AdminRoute>}/>
       <Route path="/user/dashboard"  exact element = {<UserRoute><UserDashboard/></UserRoute>}/>
+      <Route path="/user/items"  exact element = {<UserRoute><Items/></UserRoute>}/>
+      <Route path="/user/profile"  exact element = {<UserRoute><Profile/></UserRoute>}/>
+      <Route path="/user/addCollection"  exact element = {<UserRoute><AddCollection/></UserRoute>}/>
+      <Route path="/user/addTopics"  exact element = {<UserRoute><AddTopics/></UserRoute>}/>
+
     </Routes>
    </div>
   );

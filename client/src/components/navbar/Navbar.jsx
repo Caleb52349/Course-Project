@@ -21,6 +21,9 @@ const handleLogout = e=>{
 }
 
 
+
+
+
 if(!isAuthenticated()){
     return(
       <div>
@@ -70,6 +73,8 @@ if(user.role ===0){
     >
 
       <Nav.Link as={Link} to ='/user/dashboard'>Dashbaord</Nav.Link>
+      <Nav.Link as={Link} to ='/user/items'>Items</Nav.Link>
+      <Nav.Link as={Link} to ='/user/profile'>Profile</Nav.Link>
       <Nav.Link as ={Link} to ='/Login'onClick={handleLogout}>Logout</Nav.Link>
     </Nav>
     <Form className="d-flex">
